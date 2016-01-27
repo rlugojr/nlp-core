@@ -2,7 +2,7 @@
   "author": "Spencer Kelly <spencermountain@gmail.com> (http://spencermounta.in)",
   "name": "nlp-core",
   "description": "natural language processing in the browser",
-  "version": "3.0.0",
+  "version": "0.0.1",
   "main": "src/index.js",
   "repository": {
     "type": "git",

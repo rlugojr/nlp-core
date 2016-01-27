@@ -141,12 +141,6 @@ class Sentence {
   tags() {
     return fns.pluck(this.terms, 'tag');
   }
-  syllables() {
-    return this.terms.reduce(function(arr, t) {
-      arr = arr.concat(t.syllables());
-      return arr;
-    }, []);
-  }
   //mining for specific things
   people() {
     return this.terms.filter(function(t) {

@@ -38,13 +38,13 @@ module.exports = function (grunt) {
           colors: true,
           growl: false
         },
-        src: ['tests/unit_tests/*/*.js']
+        src: ['test/unit_tests/*/*.js']
       }
     },
 
     mocha_istanbul: {
       coverageSpecial: {
-        src: 'tests/unit_tests/*/*.js',
+        src: 'test/unit_tests/*/*.js',
         options: {
           reportFormats: ['html'],
           quiet: true,

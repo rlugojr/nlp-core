@@ -1,2 +1,1 @@
-# nlp-core
-main tokenization, normalisation, and chunking functions
+the tokenization and normalization stuff

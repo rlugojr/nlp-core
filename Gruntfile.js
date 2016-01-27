@@ -16,6 +16,26 @@ module.exports = function (grunt) {
       }
     },
 
+
+    uglify: {
+      'do': {
+        src: ['./build/nlp-compromise.es5.js'],
+        dest: './build/nlp-compromise.es5.min.js'
+      },
+      'options': {
+        preserveComments: false,
+        mangle: true,
+        banner: ' /*nlp-compromise, Spencer Kelly. MIT 2015*/\n',
+        compress: {
+          drop_console: true,
+          dead_code: true,
+          properties: true,
+          unused: true,
+          warnings: true
+        }
+      }
+    },
+
     filesize: {
       base: {
         files: [{
@@ -56,6 +76,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-run');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-filesize');
@@ -65,5 +86,5 @@ module.exports = function (grunt) {
   grunt.registerTask('watch', ['watch']);
   grunt.registerTask('coverage', ['mocha_istanbul']);
   grunt.registerTask('test', ['mochaTest']);
-  grunt.registerTask('build', ['mochaTest', 'run:build', 'filesize']);
+  grunt.registerTask('build', ['mochaTest', 'run:build', 'uglify', 'filesize']);
 };

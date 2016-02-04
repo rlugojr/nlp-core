@@ -73,7 +73,7 @@ class Sentence {
     const types = {
       '?': 'interrogative',
       '!': 'exclamative',
-      '.': 'declarative',
+      '.': 'declarative'
     };
     return types[char] || 'declarative';
   }
@@ -84,7 +84,8 @@ class Sentence {
   }
   // A is B - A is not B
   negate() {
-    return negate(this);
+    negate(this);
+    return this;
   }
   // john walks quickly -> john walked quickly
   to_past() {
